@@ -6,6 +6,8 @@ from datetime import datetime
 from app.blueprints.auth.models import User
 from app.blueprints.main.models import Post
 from flask_login import login_user, logout_user, current_user
+from app import create_app
+
 
 @app.route('/')
 def home():
@@ -13,7 +15,7 @@ def home():
         'first_name': 'Derek',
         'last_name': 'Hawkins',
         'email': 'derekhcodingtemple.com',
-        'posts': Post.query.order_by(Post.date_created.desc()).all()
+        # 'posts': Post.query.order_by(Post.date_created.desc()).all()
     }
     return render_template('index.html', **context)
 

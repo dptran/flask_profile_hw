@@ -6,6 +6,7 @@ from flask_login import LoginManager
 from flask_moment import Moment
 
 db = SQLAlchemy()
+db.create_all()
 migrate = Migrate()
 login_manager = LoginManager()
 moment = Moment()
